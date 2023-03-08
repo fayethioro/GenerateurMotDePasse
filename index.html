@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <title>Projet 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+        <!-- le générateur -->
+<div id="password-generator">
+
+	<h1> Générateur de mot de passe</h1> <br>
+	 <input value="" id="passwordoutput">
+
+    <div class="range">
+      
+      <input 
+        type="number"
+        value="12"
+       
+        id="taille"
+       
+      > Caractères
+
+    </div>
+
+    <div class="flex">
+      <input type="checkbox" id="lowercase">
+      <label for="lowercase">a⇨z</label>
+
+      <input type="checkbox" id="uppercase">
+      <label for="uppercase">A⇨Z</label> 
+
+      <input type="checkbox" id="numbers">
+      <label for="numbers">0⇨9</label>
+
+      <input type="checkbox" id="symbols">
+      <label for="symbols">!⇨?</label>
+    </div>
+
+    <button id="generateButton" type="button" onclick="generateur()">Générer mdp</button>
+	<button id="generateButton3" type="button" onclick="best()">Best</button>
+	<button id="generateButton2" type="button" onclick="copie()">Copier</button>
+
+  </div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
