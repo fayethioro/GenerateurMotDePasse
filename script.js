@@ -8,7 +8,7 @@ let tabcheck = document.querySelectorAll("input");
 // let passwordgenerator = document.querySelector("#password-generator passwordoutput");
 // console.log(tabcheck);
 generer.disabled = true; 
-passwordoutput.value = " "; 
+// passwordoutput.value = " "; 
 
 tabcheck.forEach(element => {
     element.addEventListener("change", ()=>{    
