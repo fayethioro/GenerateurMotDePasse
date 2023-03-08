@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
         <title>Projet 4</title>
         <link rel="stylesheet" href="style.css">
     </head>
@@ -20,27 +21,32 @@
                 <div class="range">
                     <label for="text"> Longueur du password</label>
                     <input type="number" value="15" id="taille">
-                    <br>
                 </div>
                 <div class="flex">
 
-                    <label for="uppercase">Contient des lettres Majuscules</label>
-                    <input type="checkbox" id="uppercase">
-                    <br>
+                   <div class="majuscule">
+                        <label for="uppercase">Contient des lettres Majuscules</label>
+                        <input type="checkbox" id="uppercase">
+                   </div>
 
-                    <label for="lowercase">Contient des lettres Minuscules</label>
-                    <input type="checkbox" id="lowercase">
-                    <br>
+                    <div class="minuscule">
+                        <label for="lowercase">Contient des lettres Minuscules</label>
+                        <input type="checkbox" id="lowercase">
+                    </div>
 
-                    <label for="numbers">Contient des Nombres</label>
-                    <input type="checkbox" id="numbers">
-                    <br>
+                    <div class="numero">
+                        <label for="numbers">Contient des Nombres</label>
+                        <input type="checkbox" id="numbers">
+                    </div>
 
-                    <label for="symbols">Contient des caracteres Speciaux</label>
-                    <input type="checkbox" id="symbols">
+                    <div class="symbole">
+                        <label for="symbols">Contient des caracteres Speciaux</label>
+                        <input type="checkbox" id="symbols">
+                    </div>
                 </div>
+
                 <div class="bouton">
-                    <button id="generateButton" type="button" onclick="generateur()">Générer mdp</button>
+                    <button id="generateButton" type="button" onclick="generateur()">Générer Le mot De Passe</button>
                 <!-- <button id="generateButton3" type="button" onclick="best()">Best</button> -->
                 <button id="generateButton2" type="button" onclick="copie()">Copier</button>
                 </div>
