@@ -3,8 +3,18 @@ let tableauminuscule = ["a","z","e","r","t","y","u","i","o","p","q","s","d","f",
 let tableaumajuscule = ["A","Z","E","R","T","Y","U","I","O","P","Q","S","D","F","G","H","J","K","L","M","W","X","C","V","B","N"];
 let tableaunumero = [1,2,3,4,5,6,7,8,9,0];
 let tableausymbole=["$","%","^","&","!","@","#",":",";","'",",",".",">","<", "","/","*","-",",","|","?","~","_","=","+","(",")","{","}","[","]","£","§","\"","\\"];     
+let generer  = document.querySelector("#generateButton")
+let tabcheck = document.querySelectorAll("input");
 
+// console.log(tabcheck);
 
+tabcheck.forEach(element => {
+    element.addEventListener("change", ()=>{
+    
+            generer.disabled = false; 
+            console.log("bon")
+        });
+});
 function generateur() 
 {
     // tableau apres avoir coché
@@ -20,17 +30,21 @@ function generateur()
     ///// si l'utilisateur saisi aucun critère
     if (tableauxregroupé.length < 1) 
     {
-      alert('Tu dois séléctionner au moins un critère' );  
+      generer.disabled = true;  
+      alert('Tu dois séléctionner au moins un critère' );
+     
     }
     ///// si l'utilisateur saisi  moins de 15 caractères
      else if (passwordLength < 15) 
     {
       alert('Le minimum est de 15 caractères');
+      generer.disabled = true; 
     }
     ///// si l'utilisateur saisi  plus de 20 caractères
      else if ( passwordLength > 20) 
     {
         alert('Le maximum est de 20 caractères');
+        generer.disabled = true; 
     }
     else
      {
@@ -41,8 +55,8 @@ function generateur()
      passwordoutput.value = mdp; 
     }
 }
-// generateur();
-document.querySelector("#generateButton").addEventListener("click", generateur);
+//// generateur de mot de passe
+generer.addEventListener("click", generateur);
 
 function copie()
 {
@@ -59,4 +73,4 @@ function copie()
     alert('Copié')
     }
 }
-document.querySelector("#generateButton2").addEventListener("click", copie);
+// document.querySelector("#generateButton2").addEventListener("click", copie);

@@ -77,3 +77,8 @@ body
     outline: inset #d88f08;
     cursor: pointer;
 }
+#generateButton::after
+{
+    content: "";
+    
+}
