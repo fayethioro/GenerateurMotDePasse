@@ -5,16 +5,23 @@ let tableaunumero = [1,2,3,4,5,6,7,8,9,0];
 let tableausymbole=["$","%","^","&","!","@","#",":",";","'",",",".",">","<", "","/","*","-",",","|","?","~","_","=","+","(",")","{","}","[","]","£","§","\"","\\"];     
 let generer  = document.querySelector("#generateButton")
 let tabcheck = document.querySelectorAll("input");
-
+// let passwordgenerator = document.querySelector("#password-generator passwordoutput");
 // console.log(tabcheck);
+generer.disabled = true; 
+passwordoutput.value = " "; 
 
 tabcheck.forEach(element => {
     element.addEventListener("change", ()=>{
     
             generer.disabled = false; 
-            console.log("bon")
+            // console.log("bon")
         });
 });
+
+function vider() 
+{
+    passwordoutput.value = " "; 
+}
 function generateur() 
 {
     // tableau apres avoir coché
@@ -26,13 +33,13 @@ function generateur()
       
     let passwordLength = parseInt(document.getElementById('taille').value);
     let mdp = ''; 
-    
     ///// si l'utilisateur saisi aucun critère
     if (tableauxregroupé.length < 1) 
-    {
-      generer.disabled = true;  
-      alert('Tu dois séléctionner au moins un critère' );
+    { 
      
+      vider();
+      alert('Tu dois séléctionner au moins un critère' );
+      generer.disabled = true;  
     }
     ///// si l'utilisateur saisi  moins de 15 caractères
      else if (passwordLength < 15) 
