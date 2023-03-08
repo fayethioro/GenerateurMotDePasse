@@ -1,56 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <title>Projet 4</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-        <!-- le générateur -->
-<div id="password-generator">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <title>Projet 4</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- le générateur -->
+            <div id="password-generator">
+                <h1> Générateur de mot de passe</h1>
+                <br>
+                <input value="" id="passwordoutput">
+                <br>
+                <br>
+                <div class="range">
+                    <label for="text"> Longueur du password</label>
+                    <input type="number" value="15" id="taille">
+                    <br>
+                </div>
+                <div class="flex">
 
-	<h1> Générateur de mot de passe</h1> <br>
-	 <input value="" id="passwordoutput">
+                    <label for="uppercase">Contient des lettres Majuscules</label>
+                    <input type="checkbox" id="uppercase">
+                    <br>
 
-    <div class="range">
-      
-      <input 
-        type="number"
-        value="12"
-       
-        id="taille"
-       
-      > Caractères
+                    <label for="lowercase">Contient des lettres Minuscules</label>
+                    <input type="checkbox" id="lowercase">
+                    <br>
 
-    </div>
+                    <label for="numbers">Contient des Nombres</label>
+                    <input type="checkbox" id="numbers">
+                    <br>
 
-    <div class="flex">
-      <input type="checkbox" id="lowercase">
-      <label for="lowercase">a⇨z</label>
-
-      <input type="checkbox" id="uppercase">
-      <label for="uppercase">A⇨Z</label> 
-
-      <input type="checkbox" id="numbers">
-      <label for="numbers">0⇨9</label>
-
-      <input type="checkbox" id="symbols">
-      <label for="symbols">!⇨?</label>
-    </div>
-
-    <button id="generateButton" type="button" onclick="generateur()">Générer mdp</button>
-	<button id="generateButton3" type="button" onclick="best()">Best</button>
-	<button id="generateButton2" type="button" onclick="copie()">Copier</button>
-
-  </div>
-
-
-
-
-    <script src="script.js"></script>
-</body>
+                    <label for="symbols">Contient des caracteres Speciaux</label>
+                    <input type="checkbox" id="symbols">
+                </div>
+                <div class="bouton">
+                    <button id="generateButton" type="button" onclick="generateur()">Générer mdp</button>
+                <!-- <button id="generateButton3" type="button" onclick="best()">Best</button> -->
+                <button id="generateButton2" type="button" onclick="copie()">Copier</button>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>
