@@ -11,10 +11,9 @@ generer.disabled = true;
 passwordoutput.value = " "; 
 
 tabcheck.forEach(element => {
-    element.addEventListener("change", ()=>{
-    
+    element.addEventListener("change", ()=>{    
             generer.disabled = false; 
-            // console.log("bon")
+            // generateur();
         });
 });
 
@@ -44,12 +43,14 @@ function generateur()
     ///// si l'utilisateur saisi  moins de 15 caractères
      else if (passwordLength < 15) 
     {
+        vider();
       alert('Le minimum est de 15 caractères');
       generer.disabled = true; 
     }
     ///// si l'utilisateur saisi  plus de 20 caractères
      else if ( passwordLength > 20) 
     {
+        vider();
         alert('Le maximum est de 20 caractères');
         generer.disabled = true; 
     }
