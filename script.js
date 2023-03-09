@@ -5,6 +5,8 @@ let tableaunumero = [1,2,3,4,5,6,7,8,9,0];
 let tableausymbole=["$","%","^","&","!","@","#",":",";","'",",",".",">","<", "","/","*","-",",","|","?","~","_","=","+","(",")","{","}","[","]","£","§","\"","\\"];     
 let generer  = document.querySelector("#generateButton")
 let tabcheck = document.querySelectorAll("input");
+let generator = document.querySelector(".password");
+let after=document.querySelector(".password::after");
 // console.log(tabcheck);
 
 generer.disabled = true; 
@@ -69,6 +71,7 @@ function generateur()
 }
 //// generateur de mot de passe
 generer.addEventListener("click", generateur);
+console.log(generer.value);
 
 function copie()
 {
@@ -85,4 +88,17 @@ function copie()
     alert('Copié')
     }
 }
-// document.querySelector("#generateButton2").addEventListener("click", copie);
+generator.addEventListener("mouseover", copie);
+
+// tooltip= document.createElement("div");
+// tooltip.classList.add("tooltip");
+// generator.appendChild(tooltip);
+// tooltip.innerHTML = "copier mot de passe";
+
+
+
+// tooltip = document.createElement("div");
+// tooltip.classList.add("tooltip");
+// // tooltip.classList.add("tooltip-top");
+// generator.appendChild(tooltip);
+// // tooltip.innerHTML = "copier mot de passe";
