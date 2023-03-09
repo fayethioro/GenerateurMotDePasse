@@ -31,6 +31,7 @@ body
   height: 470px; 
   background: #091959;
   color: white;
+  position: relative;
  
 }
 .password
@@ -115,4 +116,22 @@ body
     font-weight: bold;
     outline: inset #d88f08;
     cursor: pointer;
+}
+
+.notif
+{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.dive{
+    height: 200px;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(#00000066,#00000066) , url(image/);
+
+   
 }

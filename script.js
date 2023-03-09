@@ -6,11 +6,9 @@ let tableausymbole=["$","%","^","&","!","@","#",":",";","'",",",".",">","<", "",
 let generer  = document.querySelector("#generateButton")
 let tabcheck = document.querySelectorAll("input");
 let generator = document.querySelector(".password");
-// let after=document.querySelector(".password::after");
+let passwordGenerator = document.querySelector("#password-generator")
+let bloc;
 // console.log(tabcheck);
-let tooltip;
-
-
 generer.disabled = true; 
 
 tabcheck.forEach(element => {
@@ -19,6 +17,27 @@ tabcheck.forEach(element => {
             // generateur();
         });
 });
+//fonction de notification
+
+bloc=document.createElement('div');
+
+bloc.classList.add("notif");
+passwordGenerator.appendChild(bloc);
+// console.log(bloc.classList);
+
+function notification(texte) 
+{
+    let chg=document.createElement('div');
+    bloc.appendChild(chg);
+    chg.classList.add('dive');
+    chg.innerHTML=texte;
+
+    // setTimeout(function(){
+    //     chg.style.display='none';
+    //     //chg.parentNode.removeChild(chg);
+    // }, 3000);
+
+}
 
 function vider() 
 {
@@ -40,8 +59,8 @@ function generateur()
     if (tableauxregroupé.length < 1) 
     { 
      
+      notification("Tu dois séléctionner au moins un critère");
       vider();
-      alert('Tu dois séléctionner au moins un critère' );
       generer.disabled = true;  
     }
     ///// si l'utilisateur saisi  moins de 15 caractères
@@ -75,10 +94,6 @@ function generateur()
 generer.addEventListener("click", generateur);
 
 // generator.after.innerHTML = "Copie";
-
-
-
-
 function copie()
 {
 	 
@@ -97,4 +112,6 @@ function copie()
     }
 }
 generator.addEventListener("click", copie);
+
+
 
