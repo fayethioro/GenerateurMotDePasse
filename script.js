@@ -76,9 +76,9 @@ function copie()
     }
     else 
     {
-    passwordoutput.select();
-    document.execCommand("copy");
-    alert('Copié')
+        passwordoutput.select();
+        document.execCommand("copy");
+        alert('Copié')
     }
 }
 // document.querySelector("#generateButton2").addEventListener("click", copie);
