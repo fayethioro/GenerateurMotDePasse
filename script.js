@@ -34,14 +34,9 @@ function notification(texte)
     
     setTimeout(function(){
         chg.style.display='none';
-        //chg.parentNode.removeChild(chg);
     }, 1000);
    
 }
-
-
-
-
 function vider() 
 {
     motdepasse.value = " "; 
@@ -49,7 +44,7 @@ function vider()
 function generateur() 
 {
     // tableau apres avoir coché
-    let tableauxregroupé = [].concat( 
+    let tableauxregroupe = [].concat( 
         lowercase.checked ? tableauminuscule : [], 
         uppercase.checked ? tableaumajuscule : [],
         numbers.checked ? tableaunumero : [],
@@ -59,7 +54,7 @@ function generateur()
     console.log("passwordLength");
     let mdp = ''; 
     ///// si l'utilisateur saisi aucun critère
-    if (tableauxregroupé.length < 1) 
+    if (tableauxregroupe.length < 1) 
     { 
      
       notification("Tu dois séléctionner au moins un critère");
@@ -83,12 +78,12 @@ function generateur()
     else
      {
         // passwordLength.forEach(element => {
-        //     mdp+= tableauxregroupé[Math.floor(Math.random() * tableauxregroupé.length)]; 
+        //     mdp+= tableauxregroupe[Math.floor(Math.random() * tableauxregroupe.length)]; 
             
         // });
         for (i = 0; i < passwordLength; i++)
          {
-          mdp+= tableauxregroupé[Math.floor(Math.random() * tableauxregroupé.length)]; 
+          mdp+= tableauxregroupe[Math.floor(Math.random() * tableauxregroupe.length)]; 
          }
      motdepasse.value = mdp; 
     }
