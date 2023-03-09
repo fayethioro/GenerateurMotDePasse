@@ -31,13 +31,16 @@ function notification(texte)
     bloc.appendChild(chg);
     chg.classList.add('dive');
     chg.innerHTML=texte;
-
+    
     setTimeout(function(){
         chg.style.display='none';
         //chg.parentNode.removeChild(chg);
     }, 1000);
-
+   
 }
+
+
+
 
 function vider() 
 {
