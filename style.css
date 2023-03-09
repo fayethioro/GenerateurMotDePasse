@@ -121,17 +121,23 @@ body
 .notif
 {
     position: absolute;
-    top: 50px;
+    top: 40%;
     left: 50px;
 }
 .dive{
     height: 200px;
-    color: white;
+    color: #321197;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background:linear-gradient(#00000066,#00000066) , url(image/);
+   padding-top: 40px;
+   padding-left: 10px;
+   padding-right: 10px;
+    font-size: 1.4rem;
+    font-weight: bolder;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 56%, 83% 57%, 75% 100%, 62% 58%, 0 57%);
+    background:#d88f08 ;
+    background-repeat: no-repeat;
+    background-size:100%;
 
    
 }

@@ -32,10 +32,10 @@ function notification(texte)
     chg.classList.add('dive');
     chg.innerHTML=texte;
 
-    // setTimeout(function(){
-    //     chg.style.display='none';
-    //     //chg.parentNode.removeChild(chg);
-    // }, 3000);
+    setTimeout(function(){
+        chg.style.display='none';
+        //chg.parentNode.removeChild(chg);
+    }, 1000);
 
 }
 
@@ -66,15 +66,15 @@ function generateur()
     ///// si l'utilisateur saisi  moins de 15 caractères
      else if (passwordLength < 15) 
     {
+        notification("Le minimum est de 15 caractères");
         vider();
-      alert('Le minimum est de 15 caractères');
       generer.disabled = true; 
     }
     ///// si l'utilisateur saisi  plus de 20 caractères
      else if ( passwordLength > 20) 
     {
+        notification("Le minimum est de 20 caractères");
         vider();
-        alert('Le maximum est de 20 caractères');
         generer.disabled = true; 
     }
     else
@@ -99,8 +99,7 @@ function copie()
 	 
     if (document.getElementById('motdepasse').value==0)
      {
-        
-        alert('Case vide , il n y a rien à copier')
+        notification("Case vide , il n y a rien à copier");
     }
     else 
     {
@@ -108,7 +107,7 @@ function copie()
         motdepasse.setSelectionRange(0, 99999);
         navigator.clipboard.writeText(motdepasse.value);
     // generator.after("copié");
-       alert('Copié')
+    notification("mot de passe copié avec success");
     }
 }
 generator.addEventListener("click", copie);
