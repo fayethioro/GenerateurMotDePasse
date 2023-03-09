@@ -80,7 +80,7 @@ function copie()
     }
     else 
     {
-    passwordoutput.select();
+    motdepasse.select();
     document.execCommand("copy");
     alert('Copié')
     }
