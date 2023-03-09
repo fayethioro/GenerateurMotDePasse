@@ -1,14 +1,13 @@
-let passwordoutput =  document.getElementById('passwordoutput');
+let motdepasse =  document.getElementById('motdepasse');
 let tableauminuscule = ["a","z","e","r","t","y","u","i","o","p","q","s","d","f","g","h","j","k","l","m","w","x","c","v","b","n"];
 let tableaumajuscule = ["A","Z","E","R","T","Y","U","I","O","P","Q","S","D","F","G","H","J","K","L","M","W","X","C","V","B","N"];
 let tableaunumero = [1,2,3,4,5,6,7,8,9,0];
 let tableausymbole=["$","%","^","&","!","@","#",":",";","'",",",".",">","<", "","/","*","-",",","|","?","~","_","=","+","(",")","{","}","[","]","£","§","\"","\\"];     
 let generer  = document.querySelector("#generateButton")
 let tabcheck = document.querySelectorAll("input");
-// let passwordgenerator = document.querySelector("#password-generator passwordoutput");
 // console.log(tabcheck);
+
 generer.disabled = true; 
-passwordoutput.value = " "; 
 
 tabcheck.forEach(element => {
     element.addEventListener("change", ()=>{    
@@ -19,7 +18,7 @@ tabcheck.forEach(element => {
 
 function vider() 
 {
-    passwordoutput.value = " "; 
+    motdepasse.value = " "; 
 }
 function generateur() 
 {
@@ -31,6 +30,7 @@ function generateur()
         symbols.checked ? tableausymbole : []);
       
     let passwordLength = parseInt(document.getElementById('taille').value);
+    console.log("passwordLength");
     let mdp = ''; 
     ///// si l'utilisateur saisi aucun critère
     if (tableauxregroupé.length < 1) 
@@ -56,11 +56,15 @@ function generateur()
     }
     else
      {
+        // passwordLength.forEach(element => {
+        //     mdp+= tableauxregroupé[Math.floor(Math.random() * tableauxregroupé.length)]; 
+            
+        // });
         for (i = 0; i < passwordLength; i++)
          {
           mdp+= tableauxregroupé[Math.floor(Math.random() * tableauxregroupé.length)]; 
          }
-     passwordoutput.value = mdp; 
+     motdepasse.value = mdp; 
     }
 }
 //// generateur de mot de passe
@@ -69,16 +73,16 @@ generer.addEventListener("click", generateur);
 function copie()
 {
 	 
-    if (document.getElementById('passwordoutput').value==0)
+    if (document.getElementById('motdepasse').value==0)
      {
         
         alert('Case vide , il n y a rien à copier')
     }
     else 
     {
-        passwordoutput.select();
-        document.execCommand("copy");
-        alert('Copié')
+    passwordoutput.select();
+    document.execCommand("copy");
+    alert('Copié')
     }
 }
 // document.querySelector("#generateButton2").addEventListener("click", copie);
