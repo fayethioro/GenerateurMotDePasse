@@ -104,8 +104,7 @@ function copie()
     else 
     {
         motdepasse.select();
-        motdepasse.setSelectionRange(0, 99999);
-        navigator.clipboard.writeText(motdepasse.value);
+       document.execCommand("copy");
     // generator.after("copié");
     notification("mot de passe copié avec success");
     }
