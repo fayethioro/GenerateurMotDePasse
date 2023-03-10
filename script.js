@@ -34,7 +34,7 @@ function notification(texte)
     
     setTimeout(function(){
         chg.style.display='none';
-    }, 1000);
+    }, 2500);
    
 }
 function vider() 
