@@ -49,22 +49,51 @@ function generateur()
         uppercase.checked ? tableaumajuscule : [],
         numbers.checked ? tableaunumero : [],
         symbols.checked ? tableausymbole : []);
-      
+    
+    let tableauxassocier=[
+        lowercase.checked ? tableauminuscule : [], 
+        uppercase.checked ? tableaumajuscule : [],
+        numbers.checked ? tableaunumero : [],
+        symbols.checked ? tableausymbole : []
+    ]
     let passwordLength = parseInt(document.getElementById('taille').value);
-    console.log("passwordLength");
     let mdp = ''; 
+
+    function verifie(tableauxassocier) {
+        cpt= 0;
+       tableauxassocier.forEach(element => {
+             if(element.length > 0) 
+             cpt++;
+       });
+    }
+    verifie(tableauxassocier);
+    
     ///// si l'utilisateur saisi aucun critère
-    if (tableauxregroupe.length < 1) 
+    if (cpt < 1) 
     { 
      
       notification("Tu dois séléctionner au moins un critère");
       vider();
       generer.disabled = true;  
     }
-    ///// si l'utilisateur saisi  moins de 15 caractères
-     else if (passwordLength < 15) 
+    ///// si l'utilisateur  à coche plus que la longueur
+    else if (cpt > passwordLength)
     {
-        notification("Le minimum est de 15 caractères");
+        notification("Diminuer les elements cochés");
+        vider();
+        generer.disabled = true;
+    }
+    // ///// si l'utilisateur ne saisie pas un nombre pour la longueur
+    else if (isNaN(passwordLength))
+    {
+        notification("tu dois saisir un nombre");
+        vider();
+        generer.disabled = true;
+    }
+    ///// si l'utilisateur saisi  moins de 15 caractères
+     else if (passwordLength < 0) 
+    {
+        notification("Le minimum est de 1 caractère");
         vider();
       generer.disabled = true; 
     }
@@ -77,10 +106,6 @@ function generateur()
     }
     else
      {
-        // passwordLength.forEach(element => {
-        //     mdp+= tableauxregroupe[Math.floor(Math.random() * tableauxregroupe.length)]; 
-            
-        // });
         for (i = 0; i < passwordLength; i++)
          {
           mdp+= tableauxregroupe[Math.floor(Math.random() * tableauxregroupe.length)]; 
