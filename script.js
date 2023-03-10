@@ -9,6 +9,15 @@ let generator = document.querySelector(".password");
 let passwordGenerator = document.querySelector("#password-generator")
 let bloc;
 // console.log(tabcheck);
+
+function getRandomLower() {
+    return console.log(String.fromCharCode(Math.floor(Math.random() * 26) + 97))
+  }
+
+getRandomLower()
+
+
+
 generer.disabled = true; 
 
 tabcheck.forEach(element => {
