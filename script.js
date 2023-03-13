@@ -50,6 +50,15 @@ function vider()
 {
     motdepasse.value = " "; 
 }
+
+function melange(chaine) 
+{
+    return chaine.sort(() => Math.random() - 0.2);
+}
+//   var tab =[ '1' , '2', '3'];
+//   melange(tab)
+//   console.log(tab)
+  
 function generateur() 
 {
     // tableau apres avoir coché
@@ -64,18 +73,20 @@ function generateur()
         uppercase.checked ? tableaumajuscule : [],
         numbers.checked ? tableaunumero : [],
         symbols.checked ? tableausymbole : []
-    ]
+    ].filter(element => element.length)
     let passwordLength = parseInt(document.getElementById('taille').value);
     let mdp = ''; 
 
-    function verifie(tableauxassocier) {
+    function verifie(tableauxassocier) 
+    {
         cpt= 0;
        tableauxassocier.forEach(element => {
              if(element.length > 0) 
              cpt++;
        });
     }
-    verifie(tableauxassocier);
+    verifie(tableauxassocier)
+    // console.log(cpt);
     
     ///// si l'utilisateur saisi aucun critère
     if (cpt < 1) 
@@ -115,11 +126,16 @@ function generateur()
     }
     else
      {
+
         for (i = 0; i < passwordLength; i++)
          {
-          mdp+= tableauxregroupe[Math.floor(Math.random() * tableauxregroupe.length)]; 
-         }
-     motdepasse.value = mdp; 
+          mdp+= tableauxassocier[i % cpt][Math.floor(Math.random() * tableauxassocier[i % cpt].length)]; 
+        }
+        console.log(mdp);
+        mdp = melange(mdp.split(''));
+        mdp = mdp.join('');
+        console.log(mdp);
+        motdepasse.value = mdp; 
     }
 }
 //// generateur de mot de passe
